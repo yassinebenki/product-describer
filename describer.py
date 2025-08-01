@@ -49,5 +49,7 @@ def save_descriptions(descriptions, path=DESCRIPTION_PATH):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(descriptions, f, indent=2, ensure_ascii=False)
 
+
+#Test routine
 if __name__ == "__main__":
     raise RuntimeError("Ce fichier est destiné à être importé depuis pipeline.py")
