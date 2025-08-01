@@ -22,6 +22,7 @@ def save_products(products, path=RAW_DATA_PATH):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(products, f, indent=2, ensure_ascii=False)
 
+#Routuine de test
 if __name__ == "__main__":
     products = fetch_products()
     save_products(products)

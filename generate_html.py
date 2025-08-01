@@ -6,12 +6,16 @@ from collections import defaultdict
 DESCRIPTION_PATH = "data/descriptions/descriptions.json"
 OUTPUT_HTML_PATH = "data/descriptions/output.html"
 
+
+#Not used
+############################
 def load_descriptions(path=DESCRIPTION_PATH):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+#############################
 
 def generate_html(descriptions):
-    grouped = defaultdict(list)
+    grouped = defaultdict(list)  # Pas besoin d'initialiser le dictionnaire avec des catégories vides
     for item in descriptions:
         category = item.get("category", "Autre")
         grouped[category].append(item)
@@ -54,6 +58,7 @@ def save_html(content, path=OUTPUT_HTML_PATH):
         f.write(content)
     print(f"✅ Fichier HTML généré dans : {path}")
 
+# Test routine
 if __name__ == "__main__":
     descriptions = load_descriptions()
     html = generate_html(descriptions)
